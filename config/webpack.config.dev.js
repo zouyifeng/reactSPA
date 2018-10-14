@@ -75,6 +75,17 @@ module.exports = {
               plugins: [
                 'transform-decorators-legacy',
                 ['import', { libraryName: 'antd', style: true }],
+                ['react-css-modules',
+                  {
+                    filetypes: {
+                      '.less': {
+                        syntax: 'postcss-less',
+                      },
+                    },
+                    generateScopedName: '[name]--[local]--[hash:base64:5]',
+                    context: paths.appEntry,
+                  },
+                ],
               ],
             },
           },
