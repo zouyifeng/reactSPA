@@ -5,6 +5,16 @@
     "stage-2"
   ],
   "plugins": [
-    ["on-demand-loading", {"library": "diana"}]
+    ["on-demand-loading", {"library": "diana"}],
+    ["react-css-modules",
+      {
+        "filetypes": {
+          ".less": {
+            "syntax": "postcss-less"
+          }
+        },
+        "generateScopedName": "[name]--[local]--[hash:base64:5]"
+      }
+    ]
   ]
 }
