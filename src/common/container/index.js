@@ -115,4 +115,10 @@ class Container extends React.Component {
   }
 }
 
-export default hot(Container)
+
+let HocContainer = Container
+if (process.env.NODE_ENV === 'development') {
+  HocContainer = hot(Container)
+}
+
+export default HocContainer

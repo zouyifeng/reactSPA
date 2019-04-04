@@ -73,4 +73,10 @@ class LoginPage extends React.Component {
 }
 
 const Login = Form.create()(LoginPage)
-export default hot(Login)
+
+let HocLogin = Login
+if (process.env.NODE_ENV === 'development') {
+  HocLogin = hot(Login)
+}
+
+export default HocLogin
